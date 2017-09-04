@@ -59,7 +59,7 @@ alias dis='sudo baobab' #disk space monitor
 alias iot='sudo iotop' #disk I/O monitor
 alias ram='sudo mount -t tmpfs -o size=1024M tmpfs /media/ramu' # creates RAMDISK - using ram as temporary hardisk- gets deleted at power loss
 alias mol='xmodmap -e "pointer = 3 2 1"' # Reverses left and right mouse buttons
-alias mor='xmodmap -e "pointer = 1 2 3"' # Reverts back mouse buttons tp default settings
+alias mor='xmodmap -e "pointer = 1 2 3"' # Reverts back mouse buttons to default settings
 alias sola='pacmd set-default-sink "alsa_output.pci-0000_00_1b.0.analog-stereo"' # change default sound sinks.. replace with names of your sinks
 alias sopi='pacmd set-default-sink "tunnel.raspi0.local.alsa_output.0.analog-stereo.2"'
 alias sopp='pacmd set-default-sink "tunnel.raspi0.local.alsa_output.usb-C-Media_Electronics_Inc._USB_PnP_Sound_Device-00-Device.analog-stereo.2"'
@@ -165,9 +165,9 @@ loop(){ #
 }
 
 	# Ping
-pin(){ # If you're IP is 10.42.0.6 and some system is on 10.42.1.5 and 10.42.0.3
+pin(){ # If your IP is 10.42.0.6 and some system is on 10.42.1.5 and 10.42.0.3
 	   # and you want to ping 10.42.0.3, just type "pin 3"
-	   # if you want to ping 10.42.1.5, just tpe "pin 1 5"
+	   # if you want to ping 10.42.1.5, just type "pin 1 5"
 	   # for pinging pi.local, just type "pin pi"
 	v2=$(ifconfig | grep Bcast | grep -o -P "(?<=addr:).*(?=  B)" | grep -oE '[0-9]+')
 	echo $v2
