@@ -135,7 +135,10 @@ adda(){ # add aliases: "adda "alias po='ping'"" to add corresponding alias direc
 	echo $1 >> ~/.bash_aliases
 }
 
-loop(){ # 
+loop(){ # for looping a command
+		# 'loop ls' will print output of 'ls', every 5 secs (default) till stopped (Ctrl + C)
+		# 'loop ls 3' will print output of 'ls' every 3 secs till stopped (Ctrl + C)
+		# 'loop ls 3 5' will print output of 'ls' every 3 secs for 5 times then exit
 	ab=$2
 	if [ -z "$2" ];
 		then
